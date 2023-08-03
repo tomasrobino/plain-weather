@@ -240,8 +240,17 @@ geoRequest.onreadystatechange = function() {
                     header.innerHTML += `Weather in ${city}, ${region}, ${country}:`;
                     body.appendChild(header);
 
+                    var weatherCodeList = [];
+                    response.daily.weathercode.forEach(element => {
+                        weatherCodeList.push(normaliseWMO(element));
+                    });
+                    console.log(weatherCodeList);
+
+
                     //Today's weather
-                    document.body.innerHTML+=`<p class="${wmoASCII.get(95).class}">${wmoASCII.get(95).innerHTML}</p>`
+                    document.body.innerHTML+=`<p class="${wmoASCII.get(weatherCodeList[0]).class}">${wmoASCII.get(weatherCodeList[0]).innerHTML}</p>`
+
+
                 }
             }
         }
@@ -253,3 +262,23 @@ geoRequest.onreadystatechange = function() {
 
 geoRequest.open('GET', "http://ip-api.com/json/?fields=status,lat,lon,city,regionName,country", true);
 geoRequest.send();
+
+function normaliseWMO(wmo) {
+    if (wmo === 2) {
+        return 1;
+    } else if (wmo === 48) {
+        return 45;
+    } else if (wmo === 51 || wmo === 53 || wmo === 55 || wmo === 56 || wmo === 57 || wmo === 66 || wmo === 80) {
+        return 61;
+    } else if (wmo === 81) {
+        return 63;
+    } else if (wmo === 67 || wmo === 82) {
+        return 65;
+    } else if (wmo === 73 || wmo === 86) {
+        return 75
+    } else if (wmo === 77 || wmo === 85) {
+        return 71;
+    } else if (wmo === 96 || wmo === 99) {
+        return 95;
+    } else return wmo;
+}
