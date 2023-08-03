@@ -4,145 +4,207 @@ wmoASCII.set(0,
     {
         class: 'sunny',
         innerHTML:
-            "&nbsp&nbsp\\ &nbsp  /"   +"<br>"+
-            "&nbsp&nbsp&nbsp.-."     +"<br>"+
-            "― ( &nbsp ) ―"  +"<br>"+
-            "&nbsp&nbsp&nbsp`-’"     +"<br>"+
-            "&nbsp&nbsp/  &nbsp \\ "
+            "&nbsp&nbsp&nbsp\\ &nbsp  /"   +"<br>"+
+            "&nbsp&nbsp&nbsp&nbsp.-."      +"<br>"+
+            "&nbsp― ( &nbsp ) ―"           +"<br>"+
+            "&nbsp&nbsp&nbsp&nbsp`-’"      +"<br>"+
+            "&nbsp&nbsp&nbsp/  &nbsp \\"
     }
 )
+
+/*
+
+   \   /
+    .-.
+ ― (   ) ―
+    `-’
+   /   \
+
+*/
 wmoASCII.set(1,
     {
-        class: 'sunny',
+        class: 'partlyCloudy',
         innerHTML:
-            "&nbsp&nbsp\\ &nbsp  /"   +"<br>"+
-            "&nbsp&nbsp&nbsp.-."     +"<br>"+
-            "― ( &nbsp ) ―"  +"<br>"+
-            "&nbsp&nbsp&nbsp`-’"     +"<br>"+
-            "&nbsp&nbsp/  &nbsp \\ "
+            "&nbsp&nbsp\\ &nbsp/"          +"<br>"+
+            '&nbsp_/"".-.'                 +"<br>"+
+            "&nbsp&nbsp\\_( &nbsp )."      +"<br>"+
+            "&nbsp&nbsp/(___(__)"
     }
 )
+
+/*
+
+  \  /
+_ /"".-.
+  \_(   ).
+  /(___(__)
+
+*/
+
+wmoASCII.set(3,
+    {
+        class: 'cloudy',
+        innerHTML:
+            "&nbsp&nbsp&nbsp&nbsp.--."     +"<br>"+
+            "&nbsp.-( &nbsp&nbsp )."       +"<br>"+
+            "(___.__)__)"
+    }
+)
+/*
+
+      .--.
+   .-(    ).
+  (___.__)__)
+
+*/
 wmoASCII.set(45,
     {
-        class: 'sunny',
+        class: 'foggy',
         innerHTML:
-            "&nbsp&nbsp\\ &nbsp  /"   +"<br>"+
-            "&nbsp&nbsp&nbsp.-."     +"<br>"+
-            "― ( &nbsp ) ―"  +"<br>"+
-            "&nbsp&nbsp&nbsp`-’"     +"<br>"+
-            "&nbsp&nbsp/  &nbsp \\ "
+            "_ - _ - _ -"        +"<br>"+
+            "&nbsp_ - _ - _"           +"<br>"+
+            "_ - _ - _ -"
     }
 )
-wmoASCII.set(51,
-    {
-        class: 'sunny',
-        innerHTML:
-            "&nbsp&nbsp\\ &nbsp  /"   +"<br>"+
-            "&nbsp&nbsp&nbsp.-."     +"<br>"+
-            "― ( &nbsp ) ―"  +"<br>"+
-            "&nbsp&nbsp&nbsp`-’"     +"<br>"+
-            "&nbsp&nbsp/  &nbsp \\ "
-    }
-)
-wmoASCII.set(56,
-    {
-        class: 'sunny',
-        innerHTML:
-            "&nbsp&nbsp\\ &nbsp  /"   +"<br>"+
-            "&nbsp&nbsp&nbsp.-."     +"<br>"+
-            "― ( &nbsp ) ―"  +"<br>"+
-            "&nbsp&nbsp&nbsp`-’"     +"<br>"+
-            "&nbsp&nbsp/  &nbsp \\ "
-    }
-)
+
+/*
+
+_ - _ - _ -
+ _ - _ - _
+_ - _ - _ -
+
+*/
+
 wmoASCII.set(61,
     {
-        class: 'sunny',
+        class: 'light_rain',
         innerHTML:
-            "&nbsp&nbsp\\ &nbsp  /"   +"<br>"+
-            "&nbsp&nbsp&nbsp.-."     +"<br>"+
-            "― ( &nbsp ) ―"  +"<br>"+
-            "&nbsp&nbsp&nbsp`-’"     +"<br>"+
-            "&nbsp&nbsp/  &nbsp \\ "
+            "&nbsp&nbsp&nbsp&nbsp.-."      +"<br>"+
+            "&nbsp&nbsp&nbsp( &nbsp  )."   +"<br>"+
+            "&nbsp&nbsp(___(__)"           +"<br>"+
+            "&nbsp&nbsp&nbsp´ ´ ´"         +"<br>"+
+            "&nbsp&nbsp´ ´ ´"
     }
 )
-wmoASCII.set(66,
+
+/*
+
+    .-.
+   (   ).
+  (___(__)
+   ´ ´ ´
+  ´ ´ ´
+
+*/
+
+wmoASCII.set(63,
     {
-        class: 'sunny',
+        class: 'moderate_rain',
         innerHTML:
-            "&nbsp&nbsp\\ &nbsp  /"   +"<br>"+
-            "&nbsp&nbsp&nbsp.-."     +"<br>"+
-            "― ( &nbsp ) ―"  +"<br>"+
-            "&nbsp&nbsp&nbsp`-’"     +"<br>"+
-            "&nbsp&nbsp/  &nbsp \\ "
+            "&nbsp&nbsp&nbsp&nbsp.-."      +"<br>"+
+            "&nbsp&nbsp&nbsp( &nbsp  )."   +"<br>"+
+            "&nbsp&nbsp(___(__)"           +"<br>"+
+            "&nbsp&nbsp&nbsp‘ ‘ ‘"         +"<br>"+
+            "&nbsp&nbsp‘ ‘ ‘"
     }
 )
+
+/*
+
+    .-.
+   (   ).
+  (___(__)
+   ‘ ‘ ‘
+  ‘ ‘ ‘
+
+*/
+
+wmoASCII.set(65,
+    {
+        class: 'heavy_rain',
+        innerHTML:
+            "&nbsp&nbsp&nbsp&nbsp.-."      +"<br>"+
+            "&nbsp&nbsp&nbsp( &nbsp  )."   +"<br>"+
+            "&nbsp&nbsp(___(__)"           +"<br>"+
+            "&nbsp&nbsp&nbsp/////"         +"<br>"+
+            "&nbsp&nbsp/////"
+    }
+)
+
+/*
+
+    .-.
+   (   ).
+  (___(__)
+   /////
+  /////
+
+*/
+
 wmoASCII.set(71,
     {
-        class: 'sunny',
+        class: 'slight_snow',
         innerHTML:
-            "&nbsp&nbsp\\ &nbsp  /"   +"<br>"+
-            "&nbsp&nbsp&nbsp.-."     +"<br>"+
-            "― ( &nbsp ) ―"  +"<br>"+
-            "&nbsp&nbsp&nbsp`-’"     +"<br>"+
-            "&nbsp&nbsp/  &nbsp \\ "
+            "&nbsp&nbsp&nbsp&nbsp.-."+"<br>"+
+            "&nbsp&nbsp&nbsp( &nbsp )."     +"<br>"+
+            "&nbsp&nbsp(___(__)"  +"<br>"+
+            "&nbsp&nbsp&nbsp. . . ."     +"<br>"+
+            "&nbsp&nbsp. . . ."
     }
 )
-wmoASCII.set(77,
+
+/*
+
+    .-.
+   (   ).
+  (___(__)
+  . . . .
+ . . . .
+
+*/
+
+wmoASCII.set(75,
     {
-        class: 'sunny',
+        class: 'heavy_snow',
         innerHTML:
-            "&nbsp&nbsp\\ &nbsp  /"   +"<br>"+
-            "&nbsp&nbsp&nbsp.-."     +"<br>"+
-            "― ( &nbsp ) ―"  +"<br>"+
-            "&nbsp&nbsp&nbsp`-’"     +"<br>"+
-            "&nbsp&nbsp/  &nbsp \\ "
+            "&nbsp&nbsp&nbsp&nbsp.-."+"<br>"+
+            "&nbsp&nbsp&nbsp( &nbsp )."     +"<br>"+
+            "&nbsp&nbsp(___(__)"  +"<br>"+
+            "&nbsp&nbsp&nbsp* * * *"     +"<br>"+
+            "&nbsp&nbsp* * * *"
     }
 )
-wmoASCII.set(80,
-    {
-        class: 'sunny',
-        innerHTML:
-            "&nbsp&nbsp\\ &nbsp  /"   +"<br>"+
-            "&nbsp&nbsp&nbsp.-."     +"<br>"+
-            "― ( &nbsp ) ―"  +"<br>"+
-            "&nbsp&nbsp&nbsp`-’"     +"<br>"+
-            "&nbsp&nbsp/  &nbsp \\ "
-    }
-)
-wmoASCII.set(85,
-    {
-        class: 'sunny',
-        innerHTML:
-            "&nbsp&nbsp\\ &nbsp  /"   +"<br>"+
-            "&nbsp&nbsp&nbsp.-."     +"<br>"+
-            "― ( &nbsp ) ―"  +"<br>"+
-            "&nbsp&nbsp&nbsp`-’"     +"<br>"+
-            "&nbsp&nbsp/  &nbsp \\ "
-    }
-)
+
+/*
+
+    .-.
+   (   ).
+  (___(__)
+  * * * *
+ * * * *
+
+*/
+
 wmoASCII.set(95,
     {
-        class: 'sunny',
+        class: 'thunderstorm',
         innerHTML:
-            "&nbsp&nbsp\\ &nbsp  /"   +"<br>"+
-            "&nbsp&nbsp&nbsp.-."     +"<br>"+
-            "― ( &nbsp ) ―"  +"<br>"+
-            "&nbsp&nbsp&nbsp`-’"     +"<br>"+
-            "&nbsp&nbsp/  &nbsp \\ "
+            "&nbsp&nbsp&nbsp&nbsp.-."   +"<br>"+
+            "&nbsp&nbsp&nbsp( &nbsp )"     +"<br>"+
+            "&nbsp&nbsp(___(__)"  +"<br>"+
+            "&nbsp&nbsp /_;/_;/_"     +"<br>"+
+            "&nbsp&nbsp&nbsp  /; /; /"
     }
 )
-wmoASCII.set(96,
-    {
-        class: 'sunny',
-        innerHTML:
-            "&nbsp&nbsp\\ &nbsp  /"   +"<br>"+
-            "&nbsp&nbsp&nbsp.-."     +"<br>"+
-            "― ( &nbsp ) ―"  +"<br>"+
-            "&nbsp&nbsp&nbsp`-’"     +"<br>"+
-            "&nbsp&nbsp/  &nbsp \\ "
-    }
-)
+
+/*
+    .-.
+   (   )
+  (___(__)
+   /_;/_;/_
+    /; /; /
+
+*/
 
 
 var geoRequest = new XMLHttpRequest();
@@ -179,7 +241,7 @@ geoRequest.onreadystatechange = function() {
                     body.appendChild(header);
 
                     //Today's weather
-                    document.body.innerHTML+=`<p class="${wmoASCII.get(0).class}">${wmoASCII.get(0).innerHTML}</p>`
+                    document.body.innerHTML+=`<p class="${wmoASCII.get(95).class}">${wmoASCII.get(95).innerHTML}</p>`
                 }
             }
         }
