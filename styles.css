@@ -8,3 +8,7 @@
     color: yellow;
     
 }
+
+.weather_card {
+    display: flex;
+}

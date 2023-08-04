@@ -240,16 +240,24 @@ geoRequest.onreadystatechange = function() {
                     header.innerHTML += `Weather in ${city}, ${region}, ${country}:`;
                     body.appendChild(header);
 
-                    var weatherCodeList = [];
-                    response.daily.weathercode.forEach(element => {
-                        weatherCodeList.push(normaliseWMO(element));
-                    });
-                    console.log(weatherCodeList);
+                    var forecastList = structuredClone(response.daily);
+
+                    for (let i = 0; i < forecastList.weathercode.length; i++) {
+                        forecastList.weathercode[i] = normaliseWMO(forecastList.weathercode[i]);                     
+                    }
+                    console.log(forecastList);
 
 
                     //Today's weather
-                    document.body.innerHTML+=`<p class="${wmoASCII.get(weatherCodeList[0]).class}">${wmoASCII.get(weatherCodeList[0]).innerHTML}</p>`
 
+                    for (let i = 0; i < forecastList.weathercode.length; i++) {
+                        document.body.innerHTML+=`
+                            <div class="weather_card">
+                            <p class="${wmoASCII.get(forecastList.weathercode[i]).class}">${wmoASCII.get(forecastList.weathercode[i]).innerHTML}</p>
+                            <p class="${wmoASCII.get(forecastList.weathercode[i]).class}">${wmoASCII.get(forecastList.weathercode[i]).innerHTML}</p>
+                            </div>
+                        `
+                    }
 
                 }
             }
