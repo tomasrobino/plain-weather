@@ -265,9 +265,8 @@ geoRequest.onreadystatechange = function() {
                     const body = document.getElementById("body");
 
                     //Header
-                    const header = document.createElement("p");
+                    const header = document.getElementById("header");
                     header.innerHTML += `Weather in ${city}, ${region}, ${country}:`;
-                    body.appendChild(header);
 
                     var forecastList = structuredClone(response.daily);
                     forecastList.normWMO = [];
@@ -280,7 +279,7 @@ geoRequest.onreadystatechange = function() {
                     //Today's weather
 
                     for (let i = 0; i < forecastList.weathercode.length; i++) {
-                        document.body.innerHTML+=`
+                        document.getElementById("forecast_container").innerHTML+=`
                             <div class="weather_card">
                                 <p class="${wmoASCII.get(forecastList.normWMO[i]).class}">${wmoASCII.get(forecastList.normWMO[i]).innerHTML}</p>
                                 <p class="a">
@@ -299,7 +298,7 @@ geoRequest.onreadystatechange = function() {
                 }
             }
         }
-        let endpoint = "https://api.open-meteo.com/v1/forecast?latitude="+lat+"&longitude="+lon+"&timezone=auto&current_weather=true&forecast_days=16&daily=temperature_2m_max,temperature_2m_min,weathercode,apparent_temperature_max,apparent_temperature_min,precipitation_probability_mean,precipitation_sum,windspeed_10m_max";
+        let endpoint = "https://api.open-meteo.com/v1/forecast?latitude="+lat+"&longitude="+lon+"&timezone=auto&forecast_days=10&daily=temperature_2m_max,temperature_2m_min,weathercode,apparent_temperature_max,apparent_temperature_min,precipitation_probability_mean,precipitation_sum,windspeed_10m_max";
         weatherRequest.open("GET", endpoint, true);
         weatherRequest.send();
 	}
