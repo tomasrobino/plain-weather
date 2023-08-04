@@ -268,20 +268,29 @@ geoRequest.onreadystatechange = function() {
                     const header = document.getElementById("header");
                     header.innerHTML += `Weather in ${city}, ${region}, ${country}:`;
 
+                    //Cloning weather information from response
                     var forecastList = structuredClone(response.daily);
+
+                    //Normalising weather codes to fit with available art
                     forecastList.normWMO = [];
                     for (let i = 0; i < forecastList.weathercode.length; i++) {
                         forecastList.normWMO[i] = normaliseWMO(forecastList.weathercode[i]);                     
                     }
                     console.log(forecastList);
 
+                    //Normalising wind direction to fit with available arrow directions (45° instances)
+                    forecastList.normWindDir = [];
+                    for (let i = 0; i < forecastList.winddirection_10m_dominant.length; i++) {
+                        forecastList.normWindDir[i] = normaliseWindDirection(forecastList.winddirection_10m_dominant[i]);
+                    }
 
-                    //Today's weather
+
+                    //Making weather cards
 
                     for (let i = 0; i < forecastList.weathercode.length; i++) {
                         document.getElementById("forecast_container").innerHTML+=`
                             <div class="weather_card">
-                                <p class="${wmoASCII.get(forecastList.normWMO[i]).class}">${wmoASCII.get(forecastList.normWMO[i]).innerHTML}</p>
+                                <p class="${wmoASCII.get(forecastList.normWMO[i]).class} weather_icon">${wmoASCII.get(forecastList.normWMO[i]).innerHTML}</p>
                                 <p class="a">
                                     ${forecastList.time[i]} <br>
                                     ${wmoTrans.get(forecastList.weathercode[i])} <br>
@@ -289,7 +298,7 @@ geoRequest.onreadystatechange = function() {
                                     ${forecastList.temperature_2m_min[i]} (${forecastList.apparent_temperature_min[i]}) <br>
                                     ${forecastList.precipitation_probability_mean[i]}% <br>
                                     ${forecastList.precipitation_sum[i]} mm <br>
-                                    ${forecastList.windspeed_10m_max[i]} km/h
+                                    ${forecastList.normWindDir[i]} ${forecastList.windspeed_10m_max[i]} km/h
                                 </p>
                             </div>
                         `
@@ -298,7 +307,7 @@ geoRequest.onreadystatechange = function() {
                 }
             }
         }
-        let endpoint = "https://api.open-meteo.com/v1/forecast?latitude="+lat+"&longitude="+lon+"&timezone=auto&forecast_days=10&daily=temperature_2m_max,temperature_2m_min,weathercode,apparent_temperature_max,apparent_temperature_min,precipitation_probability_mean,precipitation_sum,windspeed_10m_max";
+        let endpoint = "https://api.open-meteo.com/v1/forecast?latitude="+lat+"&longitude="+lon+"&timezone=auto&forecast_days=10&daily=temperature_2m_max,temperature_2m_min,weathercode,apparent_temperature_max,apparent_temperature_min,precipitation_probability_mean,precipitation_sum,winddirection_10m_dominant,windspeed_10m_max";
         weatherRequest.open("GET", endpoint, true);
         weatherRequest.send();
 	}
@@ -325,4 +334,25 @@ function normaliseWMO(wmo) {
     } else if (wmo === 96 || wmo === 99) {
         return 95;
     } else return wmo;
+}
+
+function normaliseWindDirection(degree) {
+    degree = Math.round(degree/45);
+    if (degree === 0 || degree === 8) {
+        return "↑";
+    } else if (degree === 1) {
+        return "↗";
+    } else if (degree === 2) {
+        return "→";
+    } else if (degree === 3) {
+        return "↘";   
+    } else if (degree === 4) {
+        return "↓";   
+    } else if (degree === 5) {
+        return "↙";   
+    } else if (degree === 6) {
+        return "←";   
+    } else if (degree === 7) {
+        return "↖";   
+    }
 }

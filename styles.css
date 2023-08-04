@@ -9,6 +9,10 @@
     flex-wrap: wrap;
 }
 
+.weather_icon {
+    width: 120px;
+}
+
 .sunny {
     color: yellow;
     
@@ -16,4 +20,7 @@
 
 .weather_card {
     display: flex;
+    margin-left: 30px;
+    margin-right: 30px;
+    width: 260px;
 }
