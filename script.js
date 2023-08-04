@@ -206,6 +206,35 @@ wmoASCII.set(95,
 
 */
 
+const wmoTrans = new Map();
+wmoTrans.set(0, "Clear sky");
+wmoTrans.set(1, "Mainly clear");
+wmoTrans.set(2, "Partly cloudy");
+wmoTrans.set(45, "Fog");
+wmoTrans.set(48, "Rime fog");
+wmoTrans.set(51, "Light drizzle");
+wmoTrans.set(53, "Moderate drizzle");
+wmoTrans.set(55, "Dense drizzle");
+wmoTrans.set(56, "Light freezing drizzle");
+wmoTrans.set(57, "Dense freezing drizzle");
+wmoTrans.set(61, "Light rain");
+wmoTrans.set(63, "Moderate rain");
+wmoTrans.set(65, "Heavy rain");
+wmoTrans.set(66, "Light freezing rain");
+wmoTrans.set(67, "Heavy freezing rain");
+wmoTrans.set(71, "Light snow");
+wmoTrans.set(73, "Moderate snow");
+wmoTrans.set(75, "Heavy snow");
+wmoTrans.set(77, "Snow grains");
+wmoTrans.set(80, "Light rain showers");
+wmoTrans.set(81, "Moderate rain showers");
+wmoTrans.set(82, "Heavy rain showers");
+wmoTrans.set(85, "Light snow showers");
+wmoTrans.set(86, "Heavy snow showers");
+wmoTrans.set(95, "Thunderstorm");
+wmoTrans.set(96, "Thunderstorm with light hail");
+wmoTrans.set(99, "Thunderstorm with heavy hail");
+
 
 var geoRequest = new XMLHttpRequest();
 geoRequest.onreadystatechange = function() {
@@ -241,9 +270,9 @@ geoRequest.onreadystatechange = function() {
                     body.appendChild(header);
 
                     var forecastList = structuredClone(response.daily);
-
+                    forecastList.normWMO = [];
                     for (let i = 0; i < forecastList.weathercode.length; i++) {
-                        forecastList.weathercode[i] = normaliseWMO(forecastList.weathercode[i]);                     
+                        forecastList.normWMO[i] = normaliseWMO(forecastList.weathercode[i]);                     
                     }
                     console.log(forecastList);
 
@@ -253,8 +282,8 @@ geoRequest.onreadystatechange = function() {
                     for (let i = 0; i < forecastList.weathercode.length; i++) {
                         document.body.innerHTML+=`
                             <div class="weather_card">
-                            <p class="${wmoASCII.get(forecastList.weathercode[i]).class}">${wmoASCII.get(forecastList.weathercode[i]).innerHTML}</p>
-                            <p class="${wmoASCII.get(forecastList.weathercode[i]).class}">${wmoASCII.get(forecastList.weathercode[i]).innerHTML}</p>
+                                <p class="${wmoASCII.get(forecastList.normWMO[i]).class}">${wmoASCII.get(forecastList.normWMO[i]).innerHTML}</p>
+                                <p class="a"></p>
                             </div>
                         `
                     }
