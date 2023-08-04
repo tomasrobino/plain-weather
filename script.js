@@ -284,15 +284,21 @@ geoRequest.onreadystatechange = function() {
                         forecastList.normWindDir[i] = normaliseWindDirection(forecastList.winddirection_10m_dominant[i]);
                     }
 
+                    for (let i = 0; i < forecastList.time.length; i++) {
+                        forecastList.time[i] = new Date(forecastList.time[i]);
+                    }
+
 
                     //Making weather cards
 
                     for (let i = 0; i < forecastList.weathercode.length; i++) {
+                        let weekday = forecastList.time[i].toLocaleDateString(undefined, { weekday: "long" });
                         document.getElementById("forecast_container").innerHTML+=`
                             <div class="weather_card">
                                 <p class="${wmoASCII.get(forecastList.normWMO[i]).class} weather_icon">${wmoASCII.get(forecastList.normWMO[i]).innerHTML}</p>
-                                <p class="a">
-                                    ${forecastList.time[i]} <br>
+                                <p class="weather_info">
+                                    ${weekday.slice(0,1).toUpperCase() + weekday.slice(1)} <br>
+                                    ${forecastList.time[i].toLocaleDateString()} <br>
                                     ${wmoTrans.get(forecastList.weathercode[i])} <br>
                                     ${forecastList.temperature_2m_max[i]} (${forecastList.apparent_temperature_max[i]}) <br>
                                     ${forecastList.temperature_2m_min[i]} (${forecastList.apparent_temperature_min[i]}) <br>
@@ -355,4 +361,9 @@ function normaliseWindDirection(degree) {
     } else if (degree === 7) {
         return "↖";   
     }
+}
+
+function normaliseTime(time) {
+    // 2023-08-04
+    const date = new Date(time)
 }
