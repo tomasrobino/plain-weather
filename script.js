@@ -79,11 +79,11 @@ wmoASCII.set(61,
     {
         class: 'light_rain',
         innerHTML:
-            "&nbsp&nbsp&nbsp&nbsp.-."      +"<br>"+
-            "&nbsp&nbsp&nbsp( &nbsp  )."   +"<br>"+
-            "&nbsp&nbsp(___(__)"           +"<br>"+
-            "&nbsp&nbsp&nbsp´ ´ ´"         +"<br>"+
-            "&nbsp&nbsp´ ´ ´"
+            "&nbsp&nbsp&nbsp.-."      +"<br>"+
+            "&nbsp&nbsp( &nbsp  )."   +"<br>"+
+            "&nbsp(___(__)"           +"<br>"+
+            "&nbsp&nbsp´ ´ ´"         +"<br>"+
+            "&nbsp´ ´ ´"
     }
 )
 
@@ -283,7 +283,15 @@ geoRequest.onreadystatechange = function() {
                         document.body.innerHTML+=`
                             <div class="weather_card">
                                 <p class="${wmoASCII.get(forecastList.normWMO[i]).class}">${wmoASCII.get(forecastList.normWMO[i]).innerHTML}</p>
-                                <p class="a"></p>
+                                <p class="a">
+                                    ${forecastList.time[i]} <br>
+                                    ${wmoTrans.get(forecastList.weathercode[i])} <br>
+                                    ${forecastList.temperature_2m_max[i]} (${forecastList.apparent_temperature_max[i]}) <br>
+                                    ${forecastList.temperature_2m_min[i]} (${forecastList.apparent_temperature_min[i]}) <br>
+                                    ${forecastList.precipitation_probability_mean[i]}% <br>
+                                    ${forecastList.precipitation_sum[i]} mm <br>
+                                    ${forecastList.windspeed_10m_max[i]} km/h
+                                </p>
                             </div>
                         `
                     }
@@ -291,7 +299,7 @@ geoRequest.onreadystatechange = function() {
                 }
             }
         }
-        let endpoint = "https://api.open-meteo.com/v1/forecast?latitude="+lat+"&longitude="+lon+"&timezone=auto&current_weather=true&forecast_days=16&daily=temperature_2m_max,temperature_2m_min,weathercode";
+        let endpoint = "https://api.open-meteo.com/v1/forecast?latitude="+lat+"&longitude="+lon+"&timezone=auto&current_weather=true&forecast_days=16&daily=temperature_2m_max,temperature_2m_min,weathercode,apparent_temperature_max,apparent_temperature_min,precipitation_probability_mean,precipitation_sum,windspeed_10m_max";
         weatherRequest.open("GET", endpoint, true);
         weatherRequest.send();
 	}
