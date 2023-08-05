@@ -23,12 +23,12 @@ wmoASCII.set(0,
 */
 wmoASCII.set(1,
     {
-        class: 'partlyCloudy',
+        class: 'yellow',
         innerHTML:
             "&nbsp&nbsp\\ &nbsp/"          +"<br>"+
-            '&nbsp_/"".-.'                 +"<br>"+
-            "&nbsp&nbsp\\_( &nbsp )."      +"<br>"+
-            "&nbsp&nbsp/(___(__)"
+            '&nbsp_/""<span class="white">.-.</span>'                 +"<br>"+
+            "&nbsp&nbsp\\_<span class='white'>( &nbsp ).</span>"      +"<br>"+
+            "&nbsp&nbsp/<span class='white'>(___(__)</span>"
     }
 )
 
@@ -59,7 +59,7 @@ wmoASCII.set(3,
 */
 wmoASCII.set(45,
     {
-        class: 'foggy',
+        class: 'grey',
         innerHTML:
             "_ - _ - _ -"        +"<br>"+
             "&nbsp_ - _ - _"           +"<br>"+
@@ -82,8 +82,8 @@ wmoASCII.set(61,
             "&nbsp&nbsp&nbsp.-."      +"<br>"+
             "&nbsp&nbsp( &nbsp  )."   +"<br>"+
             "&nbsp(___(__)"           +"<br>"+
-            "&nbsp&nbsp´ ´ ´"         +"<br>"+
-            "&nbsp´ ´ ´"
+            "&nbsp&nbsp<span class='aqua'>´ ´ ´</span>"         +"<br>"+
+            "&nbsp<span class='aqua'>´ ´ ´</span>"
     }
 )
 
@@ -104,8 +104,8 @@ wmoASCII.set(63,
             "&nbsp&nbsp&nbsp&nbsp.-."      +"<br>"+
             "&nbsp&nbsp&nbsp( &nbsp  )."   +"<br>"+
             "&nbsp&nbsp(___(__)"           +"<br>"+
-            "&nbsp&nbsp&nbsp‘ ‘ ‘"         +"<br>"+
-            "&nbsp&nbsp‘ ‘ ‘"
+            "&nbsp&nbsp&nbsp<span class='aqua'>‘ ‘ ‘</span>"         +"<br>"+
+            "&nbsp&nbsp<span class='aqua'>‘ ‘ ‘</span>"
     }
 )
 
@@ -126,8 +126,8 @@ wmoASCII.set(65,
             "&nbsp&nbsp&nbsp&nbsp.-."      +"<br>"+
             "&nbsp&nbsp&nbsp( &nbsp  )."   +"<br>"+
             "&nbsp&nbsp(___(__)"           +"<br>"+
-            "&nbsp&nbsp&nbsp/////"         +"<br>"+
-            "&nbsp&nbsp/////"
+            "&nbsp&nbsp&nbsp<span class='aqua'>/////</span>"         +"<br>"+
+            "&nbsp&nbsp<span class='aqua'>/////</span>"
     }
 )
 
@@ -192,8 +192,8 @@ wmoASCII.set(95,
             "&nbsp&nbsp&nbsp&nbsp.-."   +"<br>"+
             "&nbsp&nbsp&nbsp( &nbsp )"     +"<br>"+
             "&nbsp&nbsp(___(__)"  +"<br>"+
-            "&nbsp&nbsp /_;/_;/_"     +"<br>"+
-            "&nbsp&nbsp&nbsp  /; /; /"
+            "&nbsp&nbsp <span class='yellow'>/_</span><span class='aqua'>;</span><span class='yellow'>/_</span><span class='aqua'>;</span><span class='yellow'>/_</span>"     +"<br>"+
+            "&nbsp&nbsp&nbsp  <span class='yellow'>/</span><span class='aqua'>;</span><span class='yellow'>&nbsp/</span><span class='aqua'>;</span><span class='yellow'>&nbsp/</span>"
     }
 )
 
