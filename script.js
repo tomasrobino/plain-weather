@@ -300,7 +300,7 @@ geoRequest.onreadystatechange = function() {
                                     ${weekday.slice(0,1).toUpperCase() + weekday.slice(1)} <br>
                                     ${forecastList.time[i].toLocaleDateString()} <br>
                                     ${wmoTrans.get(forecastList.weathercode[i])} <br>
-                                    ${forecastList.temperature_2m_max[i]} (${forecastList.apparent_temperature_max[i]}) <br>
+                                    <span class="${getColor(forecastList.temperature_2m_max[i])}"> ${forecastList.temperature_2m_max[i]} </span> <span class="${getColor(forecastList.apparent_temperature_max[i])}">(${forecastList.apparent_temperature_max[i]})</span> <br>
                                     ${forecastList.temperature_2m_min[i]} (${forecastList.apparent_temperature_min[i]}) <br>
                                     ${forecastList.precipitation_probability_mean[i]}% <br>
                                     ${forecastList.precipitation_sum[i]} mm <br>
@@ -309,7 +309,6 @@ geoRequest.onreadystatechange = function() {
                             </div>
                         `
                     }
-
                 }
             }
         }
@@ -366,4 +365,33 @@ function normaliseWindDirection(degree) {
 function normaliseTime(time) {
     // 2023-08-04
     const date = new Date(time)
+}
+
+function getColor(number) {
+    if (number > 40) {
+        return "darkred";
+    } else if (number > 35) {
+        return "red";
+    } else if (number > 30) {
+        return "orange";
+    } else if (number > 30) {
+        return "yellow";
+    } else if (number > 25) {
+        return "lime";
+    } else if (number > 20) {
+        return "green";
+    } else if (number > 15) {
+        return "aqua";
+    } else if (number > 10) {
+        return "lightblue";
+    } else if (number > 5) {
+        return "cornflowerblue";
+    } else if (number > 0) {
+        return "blue";
+    } else if (number > -5) {
+        return "navy";
+    } else if (number > -10) {
+        return "darkviolet";
+    }
+    else return "indigo";
 }
