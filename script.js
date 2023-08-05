@@ -2,7 +2,7 @@
 const wmoASCII = new Map();
 wmoASCII.set(0,
     {
-        class: 'sunny',
+        class: 'yellow',
         innerHTML:
             "&nbsp&nbsp&nbsp\\ &nbsp  /"   +"<br>"+
             "&nbsp&nbsp&nbsp&nbsp.-."      +"<br>"+

@@ -13,11 +13,6 @@
     width: 120px;
 }
 
-.sunny {
-    color: yellow;
-    
-}
-
 .weather_card {
     display: flex;
     align-items: center;
@@ -26,5 +21,19 @@
     margin-top: 5px;
     margin-bottom: 5px;
     width: 260px;
-    border: thick double white;
+    border: thin solid white;
 }
+
+.indigo {color: indigo;}
+.navy {color: navy;}
+.blue {color: blue;}
+.cornflowerblue {color: cornflowerblue;}
+.lightblue {color: lightblue;}
+.aqua {color: aqua;}
+.green {color: green;}
+.lime {color: lime;}
+.yellow {color: yellow;}
+.orange {color: orange;}
+.red {color: red;}
+.darkred {color: darkred;}
+
